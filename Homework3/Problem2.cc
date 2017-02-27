@@ -14,7 +14,6 @@ unsigned long Factorial(unsigned int N){
 	for (unsigned int i = 1; i <= N; i++){
 		
 			factorial = factorial * i;
-			std::cout << i << " " << factorial << std::endl;
 
 	}
 

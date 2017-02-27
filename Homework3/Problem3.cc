@@ -6,24 +6,25 @@
 #include <vector>
 
 
-unsigned int Stirling(unsigned int largeN){
+float Stirling(unsigned int largeN){
 	
 	unsigned int m = largeN;
 
-	unsigned int f = std::exp( m * std::log(m) - m );
+	float f =  m * std::log(m) - m ;
 
 	return f;
 
 }
 
 
-unsigned int Factorial(unsigned int N){
+unsigned long Factorial(unsigned int N){
 
-	unsigned int factorial = 1;
+	unsigned long factorial = 1;
 
 	for (unsigned int i = 1; i <= N; i++){
+		
+			factorial = factorial * i;
 
-		factorial = factorial * i;
 	}
 
 	return factorial;
@@ -37,16 +38,16 @@ int main(){
 
 	unsigned int n = 0;
 	unsigned int x = 0;
-	unsigned int factorial = 0;
+	unsigned long factorial = 0;
 	
 	int input;
 	std::cin >> input;
 
 	if(input > 19){
 	
-		unsigned int s = Stirling(input);
+		float s = Stirling(input);
 
-		std::cout << std::setprecision(0) << std::fixed << "The factorial of " << input << " is approximately " << s << std::endl;
+		std::cout << "The log of the factorial of " << input << std::setprecision(3) << std::fixed <<  " is approximately " << s << std::endl;
 
 
 		return 0;
