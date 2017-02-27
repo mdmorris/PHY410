@@ -26,9 +26,9 @@ int main(){
 	}
 	
 
-	float oldmag2 = 0.;
+	float chosenMag2 = 9999999999.;
 	float mag2 = 0.;
-	int max = -1;
+	int min = -1;
 
 	for (int i = 0; i < xvectors.size(); i++){
 
@@ -37,21 +37,19 @@ int main(){
 
 		mag2 = x*x + y*y;
 
-		std::cout << x << " " << y << " " << mag2 << std::endl;
-
-		if(mag2 > oldmag2){ 
-			oldmag2 = mag2;
-			max = i;
+		if(mag2 < chosenMag2){ 
+			chosenMag2 = mag2;
+			min = i;
 		};
 	}
 
 
-	float mag = std::sqrt(mag2);
+	float mag = std::sqrt(chosenMag2);
 
-	float xmax = xvectors[max];
-	float ymax = yvectors[max];
+	float xmin = xvectors[min];
+	float ymin = yvectors[min];
 
-	std::cout << "The vector with the largest magnitude is " << xmax << ", " << ymax << ". Magnitude = " << mag << std::endl;
+	std::cout << "\nThe vector with the smallest magnitude is (" << xmin << ", " << ymin << std::setprecision(2) << std::fixed <<  "). Magnitude = " << mag << std::endl;
 
 
 	return 0;
