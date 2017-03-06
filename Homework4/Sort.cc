@@ -60,7 +60,7 @@ int main(int argc, char * argv[]){
 	
 	}
 
-//	out.close();
+	std::fclose(stdout);
 
 
 	return 0;

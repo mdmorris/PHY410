@@ -2,7 +2,7 @@ class StudentRecord {
 
 
 	public:
-		StudentRecord(std::string const lastname = "", std::string const firstname = "", float const score = 0.);
+		StudentRecord(std::string lastname = "", std::string firstname = "", float score = 0.);
 
 		~StudentRecord();
 
@@ -20,6 +20,16 @@ class StudentRecord {
 		inline bool operator>(const StudentRecord & right) const {
 			return (score() > right.score()) ;
 		};
+
+		inline bool operator<=(const StudentRecord & right) const {
+			return (score() <= right.score()) ;
+		};
+
+		inline bool operator>=(const StudentRecord & right) const {
+			return (score() >= right.score()) ;
+		};
+
+
 
 
 

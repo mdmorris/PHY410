@@ -20,9 +20,9 @@ StudentRecord::StudentRecord(std::string lastname, std::string firstname, float 
 StudentRecord::~StudentRecord(){}
 
 void StudentRecord::print() const {std::cout << lastname_ << "," << firstname_ << "," << score_ << std::endl;}
-std::string StudentRecord::lastname() {return lastname_;}
-std::string StudentRecord::firstname() {return firstname_;}
-float StudentRecord::score() {return score_;}
+std::string const StudentRecord::lastname() {return lastname_;}
+std::string const StudentRecord::firstname() {return firstname_;}
+float const StudentRecord::score() const {return score_;}
 
 	
 
@@ -51,7 +51,7 @@ int main(int argc, char * argv[]){
 	}
 
 
-	if(index < records.size()){
+	if(index < records.size() && index > -1){
 		
 		StudentRecord rec = records[index];
 		std::cout << rec.lastname() << "," << rec.firstname() << "," << rec.score() << std::endl;
